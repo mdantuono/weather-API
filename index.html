@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather API</title>
+    <style>
+        #pagestuff {
+            text-align:center;
+        }
+        #bgimg {
+	           width: 100vw;
+	           z-index: -1;
+	           position:fixed;
+	           min-height:100%;
+	           min-width:100%;
+        }
+        #header {
+            padding:20px;
+            background-color:rgba(192,192,192,.5);
+        }
+    </style>
+</head>
+<body>
+    <img class="responsive" id="bgimg" src="pics/cover.jpg">
+    <div id="pagestuff">
+        <div id="header">
+        <h1>Get ya' weather hea!</h1>
+    </div>
+    <br>
+    <form onsubmit="showWeather()">
+        <input id="unitF" type="radio" name="unit" value="fahrenheit" required>Fahrenheit</input>
+        <input id="unitC" type="radio" name="unit" value="felsius" required>Celsius</input><br>
+        <button>Show weather</button>
+    </form>
+    <br>
+    <div>
+        <h2 id="place"></h2>
+        <div id="temp"></div>
+        <div id="description"></div>
+        <div id="full"></div>
+    </div>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="key.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@ var unit2;
 var latNum;
 var lonNum;
 
+//Finds location
 window.onload = function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
@@ -16,6 +17,8 @@ window.onload = function() {
         lonNum = position.coords.longitude;
     }
 };
+
+//Ajax call to obtain weather info
 function showWeather() {
     if (document.getElementById('unitF').checked) {
         unit = "imperial";
@@ -32,7 +35,7 @@ function showWeather() {
         data: { lat: latNum, lon: lonNum, units: unit, appid: APIKEY },
         success: function(data) {
             // console.log(data);
-            document.getElementById('place').innerHTML = "In your area: ";
+            document.getElementById('place').innerHTML = "In " + "<i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i>" + data.name + ": ";
             document.getElementById('temp').innerHTML = "Temp: " + data.main.temp + "°" + unit2;
             var image = document.createElement("IMG");
             image.setAttribute("src","https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");

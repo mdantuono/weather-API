@@ -29,7 +29,7 @@ function showWeather() {
     else if (document.getElementById('unitC').checked) {
         unit = "metric";
         unit2 = "C";
-        unit3 = "km/h";
+        unit3 = "m/s";
     }
     // console.log(unit);
     $.ajax ({

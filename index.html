@@ -3,6 +3,7 @@
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,35 +20,19 @@
 	           min-width:100%;
         }
         #header {
+            font-family: 'Spectral SC', serif;
             padding:10px;
-            border-bottom:solid;
+            border-bottom:solid 2px;
             background-color:rgba(255,255,255,.4);
         }
         #weather {
-            background-color:rgb(255,255,255);
-            opacity: 0;
+            background-color:rgba(255,255,255,.4);
             border-radius:25px;
-            animation: fadein 2s ease-in;
+            animation: fadein 3s ease-in;
         }
         @keyframes fadein {
             from {opacity: 0; }
-            to {opacity: .4; }
-        }
-        /* Firefox < 16 */
-        @-moz-keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: .4; }
-        }
-        
-        /* Safari, Chrome and Opera > 12.1 */
-        @-webkit-keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: .4; }
-        }
-        /* Opera < 12.1 */
-        @-o-keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: .4; }
+            to   {opacity: 1; }
         }
     </style>
 </head>
@@ -55,27 +40,26 @@
     <img class="responsive" id="bgimg" src="pics/cover.jpg">
     <div id="pagestuff">
         <div id="header">
-        <h1>Simple <i class="fa fa-umbrella" aria-hidden="true"></i> Weather</h1>
-    </div>
-    <br>
-    <form onsubmit="showWeather()">
-        <input id="unitF" type="radio" name="unit" value="fahrenheit" required>Fahrenheit</input>
-        <input id="unitC" type="radio" name="unit" value="celsius" required>Celsius</input><br>
-        <button>Show weather</button>
-    </form>
-    <br>
-    <div class="container" id="weather">
-        <h2 id="place"></h2>
-        <div>
+            <h1>Simple <i class="fa fa-umbrella" aria-hidden="true"></i> Weather</h1>
+        </div>
+        <br>
+        <form onsubmit="showWeather()">
+            <input id="unitF" type="radio" name="unit" value="fahrenheit" required>Fahrenheit</input>
+            <input id="unitC" type="radio" name="unit" value="celsius" required>Celsius</input><br>
+            <button>Show weather</button>
+        </form>
+        <br>
+        <div class="container" id="weather">
+            <h2 id="place"></h2>
+            <div>
                 <div id="temp"></div>
                 <div id="description"></div>
                 <div id="wind"></div>
                 <div id="full"></div>
+            </div>
         </div>
     </div>
-    </div>
-    
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="key.js"></script>
     <script src="weather.js"></script>

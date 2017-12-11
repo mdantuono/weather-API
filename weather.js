@@ -38,6 +38,7 @@ function showWeather() {
         data: { lat: latNum, lon: lonNum, units: unit, appid: APIKEY },
         success: function(data) {
             // console.log(data);
+            document.getElementById('weather').style.padding = "10px";
             document.getElementById('place').innerHTML = "In " + '<i class="fa fa-1x fa-map-marker"></i> ' +  data.name + ": ";
             document.getElementById('temp').innerHTML = "Temp: " + data.main.temp + " °" + unit2;
             var image = document.createElement("IMG");
